@@ -1,10 +1,10 @@
-// Scroll navbar effect
+
 const nav = document.getElementById('mainNav');
 const navLinks = document.getElementById('navLinks');
 const mobileMenu = document.getElementById('mobileMenu');
 const navItems = document.querySelectorAll('.nav-links a');
 
-// Sticky navbar on scroll
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     nav.classList.add('nav-scrolled');
@@ -12,7 +12,6 @@ window.addEventListener('scroll', () => {
     nav.classList.remove('nav-scrolled');
   }
 
-  // Highlight active section
   let current = '';
   document.querySelectorAll('section').forEach(section => {
     const sectionTop = section.offsetTop;
@@ -29,12 +28,10 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Mobile nav toggle
 mobileMenu.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Close menu on link click
 navItems.forEach(link => {
   link.addEventListener('click', () => {
     if (navLinks.classList.contains('active')) {
@@ -43,7 +40,6 @@ navItems.forEach(link => {
   });
 });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
